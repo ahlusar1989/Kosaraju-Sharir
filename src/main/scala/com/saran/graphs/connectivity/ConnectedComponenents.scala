@@ -32,9 +32,6 @@ class ConnectedComponents {
       (i, cc) :: connectedComponents(g, unmarkedList diff cc, i + 1)
   }
 
-  /*def stronglyConnectedComponents(g:Graph):List[List[Vertex]]
-  = stronglyConnectedComponents2(g,topologicalSort(g.reverse))*/
-
   def stronglyConnectedComponents(g:Graph,vertexOrder:List[Vertex]):List[List[Vertex]] = vertexOrder match {
     case Nil => List()
     case head::tail => val sccList = graphTraversal.preOrderDFS(g,vertexOrder.toSet,List(head))
